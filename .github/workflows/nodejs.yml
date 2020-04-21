@@ -29,3 +29,15 @@ jobs:
     - run: npm test
       env:
         CI: true
+      
+  deploy:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: clone current
+        run: git clone https://github.com/HammadAli01/node-js-getting-started.git .
+      - name: add heroku
+        run: git remote add heroku https://heroku:${{ secrets.heroku_api_key }}@git.heroku.com/${{ secrets.heroku_app_name }}.git
+      - name: push to heroku
+        run: git push heroku master
