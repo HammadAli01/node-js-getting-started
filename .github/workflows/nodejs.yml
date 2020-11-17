@@ -34,7 +34,7 @@ jobs:
     
     steps:
       - name: clone current
-        run: git clone https://github.com/HammadAli01/node-js-getting-started.git .
+        run: git clone https://github.com/umair901/node-js-getting-started1.git .
       - name: add heroku
         run: git remote add heroku https://heroku:${{ secrets.heroku_api_key }}@git.heroku.com/${{ secrets.heroku_app_name }}.git
       - name: push to heroku
